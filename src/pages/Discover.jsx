@@ -3,14 +3,20 @@ import { genres } from '../assets/constants';
 import { useEffect, useState } from 'react';
 import { useGetChartsTrackQuery } from '../redux/services/shazamCore';
 import { chartsTrackTestData } from "../data";
+import { useDispatch, useSelector } from 'react-redux';
 
 const Discover = () => {
   // const { data, isFetching, error } = useGetChartsTrackQuery();
+  const dispatch = useDispatch();
+  const { activeSong, isPlaying } = useSelector((state) => state.player);
 
+
+  const [selectedGenre, setSelectedGenre] = useState("Pop");
+  // temperary-------------------------------------
+  const data = chartsTrackTestData;
   const error = null;
   const [isFetching, setIsFetching] = useState(true);
 
-  const [selectedGenre, setSelectedGenre] = useState("Pop");
   
   // remove it after using real fetch data
   useEffect(()=> {
@@ -38,11 +44,14 @@ const Discover = () => {
       </div>
 
       <div className='items-center flex flex-wrap justify-center gap-8'>
-        {chartsTrackTestData.map((song,i) => (
+        {data.map((song,i) => (
           <SongCard 
             key={song.key}
             song={song}
             i={i}
+            activeSong={activeSong}
+            isPlaying={isPlaying}
+            data={data}
           />
         ))}
       </div>
