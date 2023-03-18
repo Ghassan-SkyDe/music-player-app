@@ -37,7 +37,11 @@ const Sidebar = () => {
       <RiCloseLine onClick={() => setMobileMenuOpen(false)} className="w-8 h-8 text-white mr-2"/> :
       <HiOutlineMenu onClick={() => setMobileMenuOpen(true)} className="w-8 h-8 text-white mr-2"/>}
     </div>
-    <div className={`absolute top-0 h-screen w-1/2  backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
+    <div 
+    className={`absolute top-0 h-screen w-1/2 
+    bg-gradient-to-tl from-white/10 to-[#483D8B] 
+    backdrop-blur-lg z-10 p-6 md:hidden smooth-transition 
+    ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
       <img src={logo} alt="logo" className="w-full h-14 object-contain" />
       <NavLinks/>
     </div>
