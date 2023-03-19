@@ -14,6 +14,7 @@ const Discover = () => {
   const [selectedGenre, setSelectedGenre] = useState("Pop");
   // temperary-------------------------------------
   const data = chartsTrackTestData;
+  console.log(data);
   const error = null;
   const [isFetching, setIsFetching] = useState(true);
 

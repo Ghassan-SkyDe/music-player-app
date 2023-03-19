@@ -1,11 +1,17 @@
+import RelatedSong from "./RelatedSong";
+
 const RelatedSongs = ({ data, isPlaying, activeSong, handlePause, handlePlay }) => {
-  console.log(data);
   return (
   <div>
-    {data.map((item) => (
-      <>
-      <h2>{item.id}</h2>
-      </>
+    {data.map((song,i) => (
+      <RelatedSong
+       key={song.id}
+       i={i}
+       song={song}
+       isPlaying={isPlaying} 
+       activeSong={activeSong} 
+       handlePause={handlePause} 
+       handlePlay={handlePlay}/>
     ))}
   </div>
 )};
