@@ -10,15 +10,17 @@ const SongDetails = () => {
     const songData = songDetailsTestData;
     const artistId = songData?.artists[0]?.adamid;
     const artistTopSongsData = artistTopSongTestData;
-
+    
     
     const { songId } = useParams();
     const dispatch = useDispatch();
     const { activeSong, isPlaying } = useSelector((state) => state.player);
     // const { data: songData, isFetching: isFetchingSongData, error } = useGetSongDetailsQuery({songId});
-    // const { data: artistTopSongsData, isFetching: isFetchingArtistTopSongsData } = useGetArtistTopSongsQuery({artistId});
+    // const artistId = songData?.artists[0]?.adamid;
+    // const { data: artistTopSongsData, isFetching: isFetchingArtistTopSongsData, error: relatedError } = useGetArtistTopSongsQuery({artistId});
     
-    // if(isFetchingSongData || isFetchingArtistTopSongsData) return <Loader title="Searching song details..."/>
+    
+    // if(isFetchingSongData) return <Loader title="Searching song details..."/>
     // if(error) return <Error/>;
     
     const handlePauseClick = () => {
@@ -28,7 +30,6 @@ const SongDetails = () => {
     const handlePlayClick = ({ song, i }) => {
       dispatch(setActiveSong({ song, songData, i}));
       dispatch(playPause(true));
-    // console.log(song);
     };
     return (
         <div className="flex flex-col">
@@ -45,7 +46,8 @@ const SongDetails = () => {
 
             {/* related Songs */}
             <RelatedSongs
-             data={artistTopSongTestData}
+            //  data={artistTopSongsData?.data}
+             data={artistTopSongsData}
              isPlaying={isPlaying}
              activeSong={activeSong}
              handlePause={handlePauseClick}
