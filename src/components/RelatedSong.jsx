@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PlayPause1 from './PlayPause1';
+import PlayPause from './PlayPause1';
 
 const RelatedSong = ({ song, i, isPlaying, activeSong, handlePause, handlePlay }) => {
     // console.log(song.attributes);
@@ -26,7 +26,8 @@ return(
         </p>
       </div>
     </div>
-        <PlayPause1
+        <PlayPause
+          isSmall
           isPlaying={isPlaying}
           activeSong={activeSong}
           song={song}
