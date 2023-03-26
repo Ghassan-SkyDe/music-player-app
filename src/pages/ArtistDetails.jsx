@@ -21,7 +21,7 @@ const ArtistDetails = () => {
          
               <div className="ml-5 select-none">
                <p className="font-bold sm:text-3xl text-xl text-white">{Object.values(data?.resources.artists)[0].attributes.name}</p>
-               {Object.values(data?.resources.artists)[0].attributes.genreNames.map((genre) => <p className="text-base mt-2 text-red-400">{genre}</p>)}
+               {Object.values(data?.resources.artists)[0].attributes.genreNames.map((genre,i) => <p key={i} className="text-base mt-2 text-red-400">{genre}</p>)}
               </div>
              </div>
           </div>

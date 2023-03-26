@@ -1,7 +1,7 @@
 import { Error, Loader, SongCard } from '../components';
 import { genres } from '../assets/constants';
 import { useEffect, useState } from 'react';
-import { useGetChartsTrackQuery } from '../redux/services/shazamCore';
+import { useGetChartsTrackQuery } from '../redux/services/shazamApi';
 import { chartsTrackTestData } from "../data";
 import { useDispatch, useSelector } from 'react-redux';
 

@@ -6,7 +6,7 @@ import { FreeMode } from "swiper";
 
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useGetChartsTrackQuery } from "../redux/services/shazamCore";
+import { useGetChartsTrackQuery } from "../redux/services/shazamApi";
 import { chartsTrackTestData } from "../data";
 
 

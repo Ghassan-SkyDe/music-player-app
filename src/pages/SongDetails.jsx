@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { DetailsHeader, Error, Loader, RelatedSongs } from "../components";
 import { artistTopSongTestData, songDetailsTestData } from "../data";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useGetArtistTopSongsQuery, useGetSongDetailsQuery } from "../redux/services/shazamCore";
+import { useGetArtistTopSongsQuery, useGetSongDetailsQuery } from "../redux/services/shazamApi";
 
 const SongDetails = () => {
     // temperary to prevent running out of rapid api requests(only 500per month)--fixIt
