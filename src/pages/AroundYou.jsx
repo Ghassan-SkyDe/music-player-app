@@ -1,16 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Error, Loader } from '../components';
+import { useSelector } from 'react-redux';
+import { Error, Loader, SongCard } from '../components';
 import { aroundYouTestData } from '../data';
 import { useGetAroundYouQuery } from '../redux/services/shazamApi2';
 
 const AroundYou = () => {
+    const { isPlaying, activeSong } = useSelector((state) => state.player);
     // temperary--make it "" instead of DE
     const [country, setCountry] = useState("DE");
     // change to true
     const [loading, setLoading] = useState(false);
     // temperary---
     const data = aroundYouTestData;
+    const {result:{ tracks }} = data;
+    console.log(tracks);
     // const { data, isFetching, error } = useGetAroundYouQuery(country);
    
     // useEffect(() => {
@@ -23,9 +27,21 @@ const AroundYou = () => {
 
     if(loading) return <Loader title="Loading"/>
     return(
-        <div className='text-white'>
-            <h1>Around you</h1>
-             <Error title="Your copuntry is not SUPPORTED!"/>
+        <div className='flex flex-col'>
+            <h2 className='font-bold text-3xl text-white text-left mt-4 mb-10'>Around You</h2>
+            {!data?.ok && <Error title="Your copuntry is not SUPPORTED!"/>}
+
+            <div className="flex flex-wrap justify-center gap-8">
+                {tracks?.map((song,i) => (
+                    <SongCard 
+                      key={song.key}
+                      song={song}
+                      isPlaying={isPlaying} 
+                      activeSong={activeSong}
+                      data={tracks}
+                      i={i}/>
+                ))}
+            </div>
         </div>
     )
 }
