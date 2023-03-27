@@ -11,6 +11,5 @@ export const store = configureStore({
     player: playerReducer,
   },
   // check if crashed--fixIt
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(shazamApi.middleware),
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(shazamApi2.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(shazamApi.middleware, shazamApi2.middleware),
 });

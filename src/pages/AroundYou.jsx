@@ -24,11 +24,15 @@ const AroundYou = () => {
     //     .finally(() => setLoading(false));
     //     console.log(country);
     // },[country])
-
-    if(loading) return <Loader title="Loading"/>
+    
+    // fixIt-----
+    // if(loading || isFetching) return <Loader title="Loading around you SONGS..."/>
+    // if(error) return <Error/>
+    
+    if(loading) return <Loader title="Loading around you SONGS..."/>
     return(
         <div className='flex flex-col'>
-            <h2 className='font-bold text-3xl text-white text-left mt-4 mb-10'>Around You</h2>
+            <h2 className='font-bold text-3xl text-white text-left mt-4 mb-10'>Around You <span className='text-red-400'>({country})</span></h2>
             {!data?.ok && <Error title="Your copuntry is not SUPPORTED!"/>}
 
             <div className="flex flex-wrap justify-center gap-8">
