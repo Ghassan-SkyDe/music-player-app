@@ -102,7 +102,7 @@ const TopPlay = ({ song }) => {
        centeredSlidesBounds
        modules={[FreeMode]}
        className="my-8">
-        {data?.slice(0, 10).map((song, i) => (
+        {data?.slice(0, 10).map((song) => (
           <SwiperSlide 
            key={song?.key}
            style={{ width: "15%", height: "auto"}}

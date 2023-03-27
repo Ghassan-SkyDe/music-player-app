@@ -43,6 +43,7 @@ const Discover = () => {
           {genres.map((genre) => <option key={genre.value} value={genre.value}>{genre.title}</option>)}
         </select>
       </div>
+        <span className='text-center text-xs text-red-300 mb-6'>Because apis for genres was premium functionality of this option menu did not implant</span>
 
       <div className='items-center flex flex-wrap justify-center gap-8'>
         {data.map((song,i) => (
