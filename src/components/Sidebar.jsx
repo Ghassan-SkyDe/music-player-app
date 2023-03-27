@@ -6,13 +6,13 @@ import { logo } from "../assets";
 import { links } from "../assets/constants";
 import { HiOutlineMenu } from "react-icons/hi";
 
-const NavLinks = ({ handleClick }) => (
+const NavLinks = () => (
   <div className="mt-10 px-3">
     {links.map((item) => (
       <NavLink
-       to={item.to} 
+       to={item.to}
+       end
        key={item.name}
-       onClick={()=> handleClick && handleClick}
        className="flex flex-row justify-start items-center my-8 text-sm 
        font-medium text-gray-400 hover:text-cyan-400">
         <item.icon className="w-6 h-6 mr-2"/>
