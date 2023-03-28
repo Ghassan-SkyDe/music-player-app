@@ -32,10 +32,12 @@ return(
        <img src={song.images?.coverart} alt="song_img" className="rounded-lg" />
     </div>
     <div className="mt-4 flex flex-col ">
-      <p className="font-semibold text-lg text-white truncate">
-        <Link to={`/song/${song?.key}`}>{song.title}</Link>
+      <p className="font-semibold text-lg text-white truncate hover:text-red-600">
+        {/* fixIt----- */}
+        <Link to={`/songs/${song?.key}`}>{song.title}</Link>
       </p>
-      <p className="text-sm text-gray-300 mt-1">
+      <p className="text-sm text-gray-300 mt-1 hover:text-red-600">
+        {/* fixIt----- */}
         <Link to={song?.artist ? `/artists/${song?.artists[0].adamid}` : '/top-artists'}>{song.subtitle}</Link>
       </p>
     </div>

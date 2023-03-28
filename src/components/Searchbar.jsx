@@ -7,6 +7,7 @@ const Searchbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search/${searchTerm}`);
+    setSearchTerm("");
   }
   return(
   <form onSubmit={handleSubmit} autoComplete="off" className="p-2 text-gray-400 focus-whitin:text-gray-600">
