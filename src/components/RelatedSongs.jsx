@@ -3,7 +3,6 @@ import Loader from "./Loader";
 import RelatedSong from "./RelatedSong";
 
 const RelatedSongs = ({ data, isPlaying, activeSong, handlePause, handlePlay, isFetching, error }) => {
-  console.log(data);
   if(isFetching) return <Loader title="Related songs are loading..."/>
   if(error) return <Error/>
   return (

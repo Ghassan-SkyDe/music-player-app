@@ -7,12 +7,11 @@ import { FreeMode } from "swiper";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { useGetChartsTrackQuery } from "../redux/services/shazamApi";
-import { chartsTrackTestData } from "../data";
+import { Loader, Error } from "./"
 
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
-// links-fixIt
 const TopChartCard = ({ song, i, handlePauseClick, handlePlayClick, isPlaying, activeSong }) => (
     <div 
      className="w-full flex flex-row items-center
@@ -40,20 +39,16 @@ const TopChartCard = ({ song, i, handlePauseClick, handlePlayClick, isPlaying, a
   )
 
 
-const TopPlay = ({ song }) => {
+const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  // const { data } = useGetChartsTrackQuery();
-  // temperary--fixIt
-  const data = chartsTrackTestData;
+  const { data, isFetching, error } = useGetChartsTrackQuery();
+  
   const divRef = useRef();
   // fixIt
   useEffect(() => {
     divRef.current.scrollIntoView({ behavior: 'smooth' });
   },[])
-
-  // const topPlays = data?.slice(0, 5);
-  const topPlays = data?.slice(0, 8);
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -63,6 +58,9 @@ const TopPlay = ({ song }) => {
     dispatch(setActiveSong({ song, data, i}));
     dispatch(playPause(true));
   };
+
+  // if(isFetching) return <Loader title="loading..."/>
+  // if(error) return <Error />
 
   return(
   <div ref={divRef} 
@@ -74,7 +72,7 @@ const TopPlay = ({ song }) => {
       </div>
 
       <div className="mt-4 flex flex-col gap-1">
-        {data?.slice(0, 5).map((song, i) => (
+        {data?.tracks?.slice(0, 5).map((song, i) => (
           <TopChartCard 
            key={song.key} 
            song={song} 
@@ -102,7 +100,7 @@ const TopPlay = ({ song }) => {
        centeredSlidesBounds
        modules={[FreeMode]}
        className="my-8">
-        {data?.slice(0, 10).map((song) => (
+        {data?.tracks?.slice(0, 10).map((song) => (
           <SwiperSlide 
            key={song?.key}
            style={{ width: "15%", height: "auto"}}

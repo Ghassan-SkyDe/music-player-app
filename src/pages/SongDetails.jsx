@@ -6,29 +6,23 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { useGetArtistTopSongsQuery, useGetSongDetailsQuery } from "../redux/services/shazamApi";
 
 const SongDetails = () => {
-    // temperary to prevent running out of rapid api requests(only 500per month)--fixIt
-    const songData = songDetailsTestData;
-    const artistId = songData?.artists[0]?.adamid;
-    const artistTopSongsData = artistTopSongTestData;
-    
     
     const { songId } = useParams();
     const dispatch = useDispatch();
     const { activeSong, isPlaying } = useSelector((state) => state.player);
-    // const { data: songData, isFetching: isFetchingSongData, error } = useGetSongDetailsQuery({songId});
-    // const artistId = songData?.artists[0]?.adamid;
-    // const { data: artistTopSongsData, isFetching: isFetchingArtistTopSongsData, error: relatedError } = useGetArtistTopSongsQuery({artistId});
+    const { data: songData, isFetching: isFetchingSongData, error } = useGetSongDetailsQuery({songId});
+    const artistId = songData?.artists[0]?.adamid;
+    const { data: artistTopSongsData, isFetching: isFetchingArtistTopSongsData, error: relatedError } = useGetArtistTopSongsQuery({artistId});
     
     
-    // if(isFetchingSongData) return <Loader title="Searching song details..."/>
-    // if(error) return <Error/>;
+    if(isFetchingSongData) return <Loader title="Searching song details..."/>
+    if(error) return <Error/>;
     
     const handlePauseClick = () => {
       dispatch(playPause(false));
     };
 
     const handlePlayClick = ({ song, i }) => {
-        console.log(song);
       dispatch(setActiveSong({ song, songData, i}));
       dispatch(playPause(true));
     };
@@ -47,8 +41,8 @@ const SongDetails = () => {
 
             {/* related Songs */}
             <RelatedSongs
-            //  data={artistTopSongsData?.data}
-             data={artistTopSongsData}
+             data={artistTopSongsData?.data}
+            //  data={artistTopSongsData}
              isPlaying={isPlaying}
              activeSong={activeSong}
              handlePause={handlePauseClick}

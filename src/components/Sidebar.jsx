@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { RiCloseLine } from "react-icons/ri";
-// change logo--fixIt
 import { logo } from "../assets";
 import { links } from "../assets/constants";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -24,11 +23,12 @@ const NavLinks = () => (
 
 const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
     <div className="md:flex hidden flex-col w-[240px] py-4 bg-[#191624] select-none">
-      <div className="flex flex-col justify-around items-center">
+      <div onClick={() => navigate("/")} className="flex flex-col justify-around items-center cursor-pointer">
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />
         <h6 className="text-white gradiant-text">Online Music Player</h6>
       </div>

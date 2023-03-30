@@ -17,7 +17,7 @@ return(
   <div
    className="flex flex-col w-[250px] p-4 bg-white/5
    bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
-    <div className="relative w-full h-56 group">
+    <div className="relative w-full h-56 group select-none">
       <div
        className={`absolute inset-0 justify-center 
        items-center bg-black bg-opacity-50 group-hover:flex 
@@ -31,14 +31,12 @@ return(
        </div>
        <img src={song.images?.coverart} alt="song_img" className="rounded-lg" />
     </div>
-    <div className="mt-4 flex flex-col ">
+    <div className="mt-4 flex flex-col select-none">
       <p className="font-semibold text-lg text-white truncate hover:text-red-600">
-        {/* fixIt----- */}
         <Link to={`/songs/${song?.key}`}>{song.title}</Link>
       </p>
       <p className="text-sm text-gray-300 mt-1 hover:text-red-600">
-        {/* fixIt----- */}
-        <Link to={song?.artist ? `/artists/${song?.artists[0].adamid}` : '/top-artists'}>{song.subtitle}</Link>
+        <Link to={song?.artists ? `/artists/${song?.artists[0].adamid}` : '/top-artists'}>{song.subtitle}</Link>
       </p>
     </div>
    </div>

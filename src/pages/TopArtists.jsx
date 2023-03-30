@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { ArtistCard, Error, Loader, SongCard } from '../components';
-import { chartsTrackTestData } from '../data';
+import { ArtistCard, Error, Loader } from '../components';
+import { useGetChartsTrackQuery } from '../redux/services/shazamApi';
 
 const TopArtists = () => {
-    // temperary---
-    const tracks = chartsTrackTestData;
-    console.log(tracks);
-
-    // const { data:{tracks}, isFetching, error } = useGetChartsTrackQuery();
     
-    // fixIt
-    // if(isFetching) return <Loader title="Loading Top Charts..."/>
-    // if(error) return <Error />
+    const { data:{tracks}, isFetching, error } = useGetChartsTrackQuery();
+    
+    if(isFetching) return <Loader title="Loading Top Charts..."/>
+    if(error) return <Error />
     return(
         <div className='flex flex-col'>
             <h2 className='font-bold text-3xl text-white text-left mt-4 mb-10'>Discover Top Artists</h2>

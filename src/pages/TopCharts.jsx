@@ -1,18 +1,13 @@
 import { useSelector } from 'react-redux';
 import { Error, Loader, SongCard } from '../components';
-import { chartsTrackTestData } from '../data';
 import { useGetChartsTrackQuery } from '../redux/services/shazamApi';
 
 const TopCharts = () => {
     const { isPlaying, activeSong } = useSelector((state) => state.player);
-    // temperary---
-    const tracks = chartsTrackTestData;
-
-    // const { data:{tracks}, isFetching, error } = useGetChartsTrackQuery();
+    const { data:{tracks}, isFetching, error } = useGetChartsTrackQuery();
     
-    // fixIt
-    // if(isFetching) return <Loader title="Loading Top Charts..."/>
-    // if(error) return <Error />
+    if(isFetching) return <Loader title="Loading Top Charts..."/>
+    if(error) return <Error />
     return(
         <div className='flex flex-col'>
             <h2 className='font-bold text-3xl text-white text-left mt-4 mb-10'>Discover Top Charts</h2>

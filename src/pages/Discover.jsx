@@ -1,31 +1,14 @@
 import { Error, Loader, SongCard } from '../components';
 import { genres } from '../assets/constants';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useGetChartsTrackQuery } from '../redux/services/shazamApi';
-import { chartsTrackTestData } from "../data";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Discover = () => {
-  // const { data, isFetching, error } = useGetChartsTrackQuery();
-  const dispatch = useDispatch();
+  const { data, isFetching, error } = useGetChartsTrackQuery();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-
-
   const [selectedGenre, setSelectedGenre] = useState("Pop");
-  // temperary-------------------------------------
-  const data = chartsTrackTestData;
-  // console.log(data);
-  const error = null;
-  const [isFetching, setIsFetching] = useState(true);
-
   
-  // remove it after using real fetch data
-  useEffect(()=> {
-    setTimeout(() => {
-      setIsFetching(false);
-    }, 1500);
-
-  },[])
 
   if(isFetching) return <Loader/>
   if(error) return <Error />
@@ -46,7 +29,7 @@ const Discover = () => {
         <span className='text-center text-xs text-red-300 mb-6'>Because apis for genres was premium functionality of this option menu did not implant</span>
 
       <div className='items-center flex flex-wrap justify-center gap-8'>
-        {data.map((song,i) => (
+        {data?.tracks?.map((song,i) => (
           <SongCard 
             key={song.key}
             song={song}
