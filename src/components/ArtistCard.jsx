@@ -1,12 +1,22 @@
 import { useNavigate } from "react-router-dom";
 
-const ArtistCard = ({track}) => {
+const ArtistCard = ({ track }) => {
   const navigate = useNavigate();
   return (
-  <div onClick={() => navigate(`/artists/${track?.artists[0]?.adamid}`)} className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
-    <img src={track?.images?.coverart} alt="artist" className="w-full h-56 rounded-lg" />
-    <p className="mt-4 font-semibold text-lg text-white truncate">{track?.subtitle}</p>
-  </div>
-)};
+    <div
+      onClick={() => navigate(`/artists/${track?.artists[0]?.adamid}`)}
+      className="flex w-[250px] animate-slideup cursor-pointer flex-col rounded-lg bg-white/5 bg-opacity-80 p-4 backdrop-blur-sm"
+    >
+      <img
+        src={track?.images?.coverart}
+        alt="artist"
+        className="h-56 w-full rounded-lg"
+      />
+      <p className="mt-4 truncate text-lg font-semibold text-white">
+        {track?.subtitle}
+      </p>
+    </div>
+  );
+};
 
 export default ArtistCard;
