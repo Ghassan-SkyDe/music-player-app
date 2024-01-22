@@ -13,19 +13,17 @@ Feel free to give it a start 🌟
 
 
 ## Tech Stack
-- ⚡ Vite
-- 🧰 Redux 
-- 🧰 Redux-toolkit 
-- 🧰 Redux-RTK 
-- ⚛️ React.js 
-- 🔄 Functional components 
-- 🌐 react-router-dom 
-- 🚀 Javascript 
-- 🎨 Pure CSS 
-- 🖌️ Tailwind CSS 
-- 🎠 Swiper 
-- 📱 Fully Responsive
-- 📡 Rapid API 
+![Static Badge](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript)
+![Static Badge](https://img.shields.io/badge/React-black?style=for-the-badge&logo=react)
+![Static Badge](https://img.shields.io/badge/Vite-black?style=for-the-badge&logo=vite)
+![Static Badge](https://img.shields.io/badge/Redux-black?style=for-the-badge&logo=redux)
+![Static Badge](https://img.shields.io/badge/Redux%2Frtk-black?style=for-the-badge&logo=redux)
+![Static Badge](https://img.shields.io/badge/Tailwind-black?style=for-the-badge&logo=tailwindcss)
+![Static Badge](https://img.shields.io/badge/Rapid%2Fapi-black?style=for-the-badge&logo=rapid)
+![Static Badge](https://img.shields.io/badge/swiper-black?style=for-the-badge&logo=swiper)
+![Static Badge](https://img.shields.io/badge/.env-black?style=for-the-badge&logo=.env)
+![Static Badge](https://img.shields.io/badge/Netlify-black?style=for-the-badge&logo=netlify)
+
 
 ## Demo
 
@@ -37,18 +35,17 @@ Take a look at the live project deployed on Netlify
 
 ## Screenshots
 
-**DESKTOP**
+** ------------------------------------- DESKTOP  -------------------------------------**
 
-![chrome-capture-2023-8-26 (2)-min](https://github.com/Sky-De/music-player-app/assets/79264045/6045794e-3900-41ba-a848-9a24e09ee671)
+<img src="https://github.com/Sky-De/music-player-app/assets/79264045/6045794e-3900-41ba-a848-9a24e09ee671" width="80%">
 
-![chrome-capture-2023-8-26-min](https://github.com/Sky-De/music-player-app/assets/79264045/47fa4ccd-7c52-4d07-bcf6-b84ffc5cac5c)
+<img src="https://github.com/Sky-De/music-player-app/assets/79264045/47fa4ccd-7c52-4d07-bcf6-b84ffc5cac5c" width="80%">
 
 
 
-**Mobile**
+** ------------------------------------- Mobile  -------------------------------------**
 
-![chrome-capture-2023-8-26 (1)-min](https://github.com/Sky-De/music-player-app/assets/79264045/1bf96be0-4f20-4dc3-a515-7dbf2820dcef)
-
+<img src="https://github.com/Sky-De/music-player-app/assets/79264045/1bf96be0-4f20-4dc3-a515-7dbf2820dcef" width="270">
 
 
 ## About
