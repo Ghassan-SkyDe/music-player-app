@@ -20,7 +20,7 @@ const TopChartCard = ({
   activeSong,
 }) => (
   <div
-    className="mb-2 flex w-full cursor-pointer
+    className="flex w-full cursor-pointer
      flex-row items-center rounded-lg p-4 py-2 hover:bg-[#4c426e]"
   >
     <h4 className="mr-3 text-base font-bold text-white">{i + 1}. </h4>
@@ -108,9 +108,9 @@ const TopPlay = () => {
       </div>
 
       {/* topArtist */}
-      <div className="mt-8 flex w-full flex-col">
+      <div className="flex w-full flex-col">
         <div className="flex flex-row items-center justify-between">
-          <h2 className="text-2xl font-bold text-white">Top Artists</h2>
+          <h2 className="mt-2 text-2xl font-bold text-white">Top Artists</h2>
           <Link to="/top-artists">
             <p className="cursor-pointer text-base text-gray-300">See more</p>
           </Link>
@@ -118,25 +118,23 @@ const TopPlay = () => {
 
         <Swiper
           slidesPerView="auto"
-          spaceBetween={20}
+          spaceBetween={35}
           freeMode
           centeredSlidesBounds
           modules={[FreeMode]}
-          className="my-8"
+          className="mb-8 mt-2"
         >
           {data?.tracks?.slice(0, 10).map((song) => (
             <SwiperSlide
               key={song?.key}
-              style={{ width: "15%", height: "auto" }}
+              style={{ width: "9%", height: "auto" }}
               className="animate-slideright select-none rounded-full shadow-lg"
             >
               <Link
                 to={`/artists/${song?.artists?.[0]?.adamid}`}
-                // to={`/`}
                 className="group"
               >
                 <img
-                  // src={""}
                   src={song?.images?.background}
                   alt={song.name}
                   className="w-full rounded-full object-cover"

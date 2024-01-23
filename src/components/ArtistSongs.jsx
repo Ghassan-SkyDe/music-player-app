@@ -7,8 +7,8 @@ const ArtistSongCard = ({ song, i }) => {
   return (
     <div
       onClick={() => navigate(`/search/${song.name}`)}
-      className="mb-2 flex w-full cursor-pointer
-     flex-row items-center rounded-lg p-4 py-2 hover:bg-[#4c426e]"
+      className="flex w-full cursor-pointer
+     flex-row items-center rounded-lg p-4 py-2 hover:bg-[#6e4442d8]"
     >
       <h4 className="mr-3 text-base font-bold text-white">{i + 1}. </h4>
       <div className="flex flex-1 items-center justify-between">
