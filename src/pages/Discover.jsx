@@ -9,14 +9,13 @@ const Discover = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const [selectedGenre, setSelectedGenre] = useState("Pop");
 
-  if (isFetching) return <Loader />;
   if (error) return <Error />;
 
   const genreTitle = "Pop";
   return (
     <div className="flex flex-col">
       <div className="mt-4 mb-10 flex w-full flex-col items-center justify-between sm:flex-row ">
-        <h2 className="mb-2 text-left text-3xl font-bold text-white">
+        <h2 className="mb-2 w-1/2 text-left text-8xl font-bold text-white">
           Discover {selectedGenre}
         </h2>
         <select
@@ -36,18 +35,22 @@ const Discover = () => {
         did not implant
       </span>
 
-      <div className="flex flex-wrap items-center justify-center gap-8">
-        {data?.tracks?.map((song, i) => (
-          <SongCard
-            key={song.key}
-            song={song}
-            i={i}
-            activeSong={activeSong}
-            isPlaying={isPlaying}
-            data={data}
-          />
-        ))}
-      </div>
+      {isFetching ? (
+        <Loader />
+      ) : (
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {data?.tracks?.map((song, i) => (
+            <SongCard
+              key={song.key}
+              song={song}
+              i={i}
+              activeSong={activeSong}
+              isPlaying={isPlaying}
+              data={data}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
