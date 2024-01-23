@@ -131,18 +131,18 @@ const TopPlay = () => {
               className="animate-slideright select-none rounded-full shadow-lg"
             >
               <Link
-                // to={`/artists/${song?.artists[0].adamid}`}
-                to={`/`}
+                to={`/artists/${song?.artists?.[0]?.adamid}`}
+                // to={`/`}
                 className="group"
               >
                 <img
-                  src={""}
-                  // src={song?.images.background}
+                  // src={""}
+                  src={song?.images?.background}
                   alt={song.name}
                   className="w-full rounded-full object-cover"
                 />
                 <h6 className="text-center text-white group-hover:text-red-600">
-                  {/* {song?.artists[0].alias} */}
+                  {song?.artists?.[0]?.alias}
                 </h6>
               </Link>
             </SwiperSlide>
