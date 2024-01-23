@@ -23,12 +23,12 @@ const TopChartCard = ({
     className="flex w-full cursor-pointer
      flex-row items-center rounded-lg p-4 py-2 hover:bg-[#4c426e]"
   >
-    <h4 className="mr-3 text-base font-bold text-white">{i + 1}. </h4>
+    <p className="mr-3 text-base font-bold text-white">{i + 1}. </p>
     <div className="flex flex-1 items-center justify-between">
       <img
         className="h-16 w-16 rounded-lg"
         src={song?.images?.coverart}
-        alt={song?.name}
+        alt={song?.name ? song?.name : "card cover"}
       />
       <div className="mx-3 flex flex-1 flex-col justify-center">
         <Link to={`/songs/${song?.key}`}>
@@ -88,7 +88,9 @@ const TopPlay = () => {
         <div className="flex flex-row items-center justify-between">
           <h2 className="text-2xl font-bold text-white">Top Charts</h2>
           <Link to="/top-charts">
-            <p className="cursor-pointer text-base text-gray-300">See more</p>
+            <p className="cursor-pointer text-base text-gray-300">
+              Explore more
+            </p>
           </Link>
         </div>
 
@@ -112,7 +114,9 @@ const TopPlay = () => {
         <div className="flex flex-row items-center justify-between">
           <h2 className="mt-2 text-2xl font-bold text-white">Top Artists</h2>
           <Link to="/top-artists">
-            <p className="cursor-pointer text-base text-gray-300">See more</p>
+            <p className="cursor-pointer text-base text-gray-300">
+              Explore more
+            </p>
           </Link>
         </div>
 
@@ -136,12 +140,12 @@ const TopPlay = () => {
               >
                 <img
                   src={song?.images?.background}
-                  alt={song.name}
+                  alt={song.name ? song.name : "song cover"}
                   className="w-full rounded-full object-cover"
                 />
-                <h6 className="text-center text-white group-hover:text-red-600">
+                <p className="text-center text-white group-hover:text-red-600">
                   {song?.artists?.[0]?.alias}
-                </h6>
+                </p>
               </Link>
             </SwiperSlide>
           ))}

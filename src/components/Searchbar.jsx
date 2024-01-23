@@ -20,7 +20,7 @@ const Searchbar = () => {
         Search all songs
       </label>
       <div className="flex flex-row items-center justify-start">
-        <button type="submit">
+        <button type="submit" aria-label="search btn">
           <FiSearch className="ml-4 h-5 w-5" />
         </button>
         <input

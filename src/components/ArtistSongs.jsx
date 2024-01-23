@@ -15,7 +15,7 @@ const ArtistSongCard = ({ song, i }) => {
         <img
           className="h-16 w-16 rounded-lg"
           src={artistAvatarUrl}
-          alt={song.albumName}
+          alt={song.albumName ? song.albumName : "album Cover"}
         />
         <div className="mx-3 flex flex-1 flex-col justify-center">
           <p className="w-[250px] truncate text-xl font-bold text-white  sm:w-auto">

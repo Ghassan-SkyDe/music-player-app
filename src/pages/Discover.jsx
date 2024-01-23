@@ -7,18 +7,18 @@ import { useSelector } from "react-redux";
 const Discover = () => {
   const { data, isFetching, error } = useGetChartsTrackQuery();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const [selectedGenre, setSelectedGenre] = useState("Pop");
+  const [selectedGenre, setSelectedGenre] = useState("Musics");
 
   if (error) return <Error />;
 
-  const genreTitle = "Pop";
+  const genreTitle = "Musics";
   return (
     <div className="flex flex-col">
       <div className="mt-4 mb-10 flex w-full flex-col items-center justify-between sm:flex-row ">
-        <h2 className="mb-2 w-1/2 text-left text-8xl font-bold text-white">
+        <h1 className="mb-2 w-1/2 text-left text-8xl font-bold text-white">
           Discover {selectedGenre}
-        </h2>
-        <select
+        </h1>
+        {/* <select
           onChange={(e) => setSelectedGenre(e.target.value)}
           value={selectedGenre}
           className="mt-5 rounded-lg bg-black p-3 text-sm text-gray-300 outline-none sm:mt-0"
@@ -28,12 +28,12 @@ const Discover = () => {
               {genre.title}
             </option>
           ))}
-        </select>
+        </select> */}
       </div>
-      <span className="mb-6 text-center text-xs text-red-300">
+      {/* <span className="mb-6 text-center text-xs text-red-300">
         Because apis for genres was premium functionality of this option menu
         did not implant
-      </span>
+      </span> */}
 
       {isFetching ? (
         <Loader />
