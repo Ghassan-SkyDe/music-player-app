@@ -62,7 +62,9 @@ const TopPlay = () => {
   const divRef = useRef();
   // fixIt
   useEffect(() => {
-    divRef.current.scrollIntoView({ behavior: "smooth" });
+    if (divRef) {
+      divRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   const handlePauseClick = () => {
@@ -74,8 +76,8 @@ const TopPlay = () => {
     dispatch(playPause(true));
   };
 
-  // if(isFetching) return <Loader title="loading..."/>
-  // if(error) return <Error />
+  // if (isFetching) return <Loader title="loading..." />;
+  // if (error) return <Error />;
 
   return (
     <div
@@ -129,16 +131,18 @@ const TopPlay = () => {
               className="animate-slideright select-none rounded-full shadow-lg"
             >
               <Link
-                to={`/artists/${song?.artists[0].adamid}`}
+                // to={`/artists/${song?.artists[0].adamid}`}
+                to={`/`}
                 className="group"
               >
                 <img
-                  src={song?.images.background}
+                  src={""}
+                  // src={song?.images.background}
                   alt={song.name}
                   className="w-full rounded-full object-cover"
                 />
                 <h6 className="text-center text-white group-hover:text-red-600">
-                  {song?.artists[0].alias}
+                  {/* {song?.artists[0].alias} */}
                 </h6>
               </Link>
             </SwiperSlide>

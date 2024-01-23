@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { DetailsHeader, Error, Loader, RelatedSongs } from "../components";
-import { artistTopSongTestData, songDetailsTestData } from "../data";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import {
   useGetArtistTopSongsQuery,
