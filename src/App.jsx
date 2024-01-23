@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 
@@ -12,7 +11,6 @@ import {
   SongDetails,
   TopCharts,
 } from "./pages";
-import { useGetAroundYouQuery } from "./redux/services/shazamApi2";
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
