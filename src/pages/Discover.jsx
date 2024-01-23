@@ -15,7 +15,7 @@ const Discover = () => {
   return (
     <div className="flex flex-col">
       <div className="mt-4 mb-10 flex w-full flex-col items-center justify-between sm:flex-row ">
-        <h1 className="mb-2 w-1/2 text-left text-8xl font-bold text-white">
+        <h1 className="mb-2 w-1/2 text-left text-6xl font-bold text-white lg:text-8xl">
           Discover {selectedGenre}
         </h1>
         {/* <select
