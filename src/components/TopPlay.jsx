@@ -36,9 +36,9 @@ const TopChartCard = ({
             {song?.title}
           </p>
         </Link>
-        <Link to={`/artists/${song?.artists[0].adamid}`}>
+        <Link to={`/artists/${song?.artists?.[0]?.adamid}`}>
           <p className="w-[200px] text-base font-semibold text-gray-300 hover:text-red-600">
-            {song?.artists[0].alias}
+            {song?.artists?.[0]?.alias}
           </p>
         </Link>
       </div>

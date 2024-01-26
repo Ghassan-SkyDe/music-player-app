@@ -50,7 +50,7 @@ const SongCard = ({ song, i, activeSong, isPlaying, data }) => {
           <Link
             to={
               song?.artists
-                ? `/artists/${song?.artists[0].adamid}`
+                ? `/artists/${song?.artists?.[0]?.adamid}`
                 : "/top-artists"
             }
           >
