@@ -33,21 +33,6 @@ Take a look at the live project deployed on Netlify
 
 ![Demo](demo.gif)
 
-## Screenshots
-
-** ------------------------------------- DESKTOP  -------------------------------------**
-
-<img src="https://github.com/Sky-De/music-player-app/assets/79264045/6045794e-3900-41ba-a848-9a24e09ee671" width="80%">
-
-<img src="https://github.com/Sky-De/music-player-app/assets/79264045/47fa4ccd-7c52-4d07-bcf6-b84ffc5cac5c" width="80%">
-
-
-
-** ------------------------------------- Mobile  -------------------------------------**
-
-<img src="https://github.com/Sky-De/music-player-app/assets/79264045/1bf96be0-4f20-4dc3-a515-7dbf2820dcef" width="270">
-
-
 ## About
 
 🎵 ReactJS Music App - Your Groovy Companion! 🎶
@@ -83,7 +68,7 @@ Provided step-by-step instructions on how to install and run this project locall
 
 ```bash
 # Clone the repository
-git clone https://github.com/Sky-De/music-player-app
+git clone https://github.com/Ghassan-SkyDe/music-player-app
 
 # Change directory
 cd your-repo-name
@@ -102,10 +87,6 @@ npm run dev
 
 ## Contact
 
-**skyDe**
+**Ghassan-SkyDe**
 
-[LinkedIn](https://www.linkedin.com/in/sky-de-763248228)
-
-[GitHub](https://github.com/Sky-De)
-
-[Twitter](https://twitter.com/SkyDe1991?t=b2SJxGA4wmHwwgxDUUtE8Q&s=09)
+[GitHub](https://github.com/Ghassan-SkyDe)
